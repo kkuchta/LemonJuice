@@ -1,0 +1,19 @@
+provider
+- Name
+
+Job
+- Role:
+  - Developer
+  - Designer
+  - Other
+- Location
+
+JPPair
+- Title
+- Description
+- Extra: json
+  - pay range
+- LocationString
+- URL
+- Provider
+- Provider_id // Some uniquely identifiable thing for this job-provider pair
