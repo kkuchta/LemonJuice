@@ -1,5 +1,6 @@
 provider
 - Name
+- URL
 
 Job
 - Role:
@@ -8,7 +9,7 @@ Job
   - Other
 - Location
 
-JPPair
+Joblisting
 - Title
 - Description
 - Extra: json
