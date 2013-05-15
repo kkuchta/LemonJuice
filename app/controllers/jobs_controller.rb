@@ -1,10 +1,13 @@
+#require 'lib/scrapers/AngelList'
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    Job.delete_all
+    @jobs = AngelList.getJobs();
+    #@jobs = Job.all
   end
 
   # GET /jobs/1
