@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @job_listing.title %>
+</p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @job_listing.provider_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @job_listing.description %>
+</p>
+
+<p>
+  <strong>Extra:</strong>
+  <%= @job_listing.extra %>
+</p>
+
+<p>
+  <strong>Location string:</strong>
+  <%= @job_listing.location_string %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @job_listing.url %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @job_listing.job_id %>
+</p>
+
+<%= link_to 'Edit', edit_job_listing_path(@job_listing) %> |
+<%= link_to 'Back', job_listings_path %>

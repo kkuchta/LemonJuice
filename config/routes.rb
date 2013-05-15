@@ -1,4 +1,6 @@
 LemonJuice::Application.routes.draw do
+  resources :job_listings
+
   resources :providers
 
   # The priority is based upon order of creation: first created -> highest priority.

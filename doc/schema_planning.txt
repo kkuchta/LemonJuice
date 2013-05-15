@@ -18,4 +18,4 @@ Joblisting
 - URL
 - job_id
 - Provider
-- Provider_id // Some uniquely identifiable thing for this job-provider pair
+- external_id // Some uniquely identifiable thing for this job-provider pair
