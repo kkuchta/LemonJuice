@@ -3,6 +3,7 @@ class CreateProviders < ActiveRecord::Migration
     create_table :providers do |t|
       t.string :name
       t.string :url
+      t.integer :id
 
       t.timestamps
     end

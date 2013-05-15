@@ -1,4 +1,6 @@
 LemonJuice::Application.routes.draw do
+  resources :jobs
+
   resources :job_listings
 
   resources :providers
