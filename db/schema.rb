@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130515054634) do
+ActiveRecord::Schema.define(version: 20130515060956) do
+
+  create_table "job_listings", force: true do |t|
+    t.string   "title"
+    t.integer  "provider_id"
+    t.string   "description"
+    t.string   "extra"
+    t.string   "location_string"
+    t.string   "url"
+    t.integer  "job_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jobs", force: true do |t|
+    t.string   "role"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "providers", force: true do |t|
     t.string   "name"
