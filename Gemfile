@@ -34,6 +34,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'httparty'
+
+gem 'quiet_assets', :group => :development
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
