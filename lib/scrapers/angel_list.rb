@@ -17,7 +17,8 @@ module AngelList
 
       result['jobs'].each do |job|
         log.info "Got title " + job['title']
-
+        
+        
       end
 
       page = page + 1

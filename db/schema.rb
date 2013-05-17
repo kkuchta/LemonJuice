@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130515060956) do
+ActiveRecord::Schema.define(version: 20130517063335) do
 
   create_table "job_listings", force: true do |t|
     t.string   "title"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20130515060956) do
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "company"
   end
 
   create_table "providers", force: true do |t|
