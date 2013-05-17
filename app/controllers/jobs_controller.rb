@@ -6,8 +6,19 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     Job.delete_all
-    @jobs = AngelList.getJobs();
-    #@jobs = Job.all
+    job_data = AngelList.getJobs();
+    job_data.each do |data|
+      # If we have a pre-existing job listing with this data
+      #   continue
+      #
+      # else, look for existing job match
+      #   if found, add job listing to that job
+      #   continue
+      #
+      # else, create new job and job listing
+    end
+    
+    @jobs = Job.all
   end
 
   # GET /jobs/1
