@@ -7,13 +7,19 @@ module AngelList
 
     last_page = 2
     page = 1
-    until page >= last_page or page > 5
+    until page >= last_page or page > 3
       url = JOBS_URL + '&page=' + page.to_s
       http_result = HTTParty.get(JOBS_URL)
       result = ActiveSupport::JSON.decode(http_result.body)
       last_page = result['last_page']
       
       log.info "Got results for page #{page} of #{last_page}"
+
+      result['jobs'].each do |job|
+        log.info "Got title " + job['title']
+
+      end
+
       page = page + 1
     end
 
