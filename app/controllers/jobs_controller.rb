@@ -17,7 +17,8 @@ class JobsController < ApplicationController
       #
       # else, create new job and job listing
     end
-    
+    @job_data = job_data
+    logger.info job_data
     @jobs = Job.all
   end
 
