@@ -8,6 +8,7 @@ class JobsController < ApplicationController
     Job.delete_all
     job_data = AngelList.getJobs();
     job_data.each do |data|
+      JobListing.ingest_job_listing( data )
       # If we have a pre-existing job listing with this data
       #   continue
       #

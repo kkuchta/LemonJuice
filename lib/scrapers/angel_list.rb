@@ -19,7 +19,7 @@ module AngelList
     last_page = 2
     page = 1
     job_listing_data = []
-    until page >= last_page or page > 3
+    until page >= last_page or page > 1
       url = "#{JOBS_URL}?page=#{page}&per_page=3"
       #log.info url.inspect
       response = HTTParty.get(url)
@@ -63,8 +63,8 @@ module AngelList
           location_string: location,
           role: role,
           url: job['angellist_url'],
-          copmany: job['startup']['name'],
-          provider_id: job['id']
+          company: job['startup']['name'],
+          key_in_provider: job['id']
         } )
       end
 

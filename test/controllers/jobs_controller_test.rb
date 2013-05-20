@@ -16,13 +16,13 @@ class JobsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create job" do
-    assert_difference('Job.count') do
-      post :create, job: { location: @job.location, role: @job.role }
-    end
+  #test "should create job" do
+    #assert_difference('Job.count') do
+      #post :create, job: { location: @job.location, role: @job.role }
+    #end
 
-    assert_redirected_to job_path(assigns(:job))
-  end
+    #assert_redirected_to job_path(assigns(:job))
+  #end
 
   test "should show job" do
     get :show, id: @job
@@ -34,10 +34,10 @@ class JobsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update job" do
-    patch :update, id: @job, job: { location: @job.location, role: @job.role }
-    assert_redirected_to job_path(assigns(:job))
-  end
+  #test "should update job" do
+    #patch :update, id: @job, job: { location: @job.location, role: @job.role }
+    #assert_redirected_to job_path(assigns(:job))
+  #end
 
   test "should destroy job" do
     assert_difference('Job.count', -1) do
