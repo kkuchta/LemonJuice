@@ -63,7 +63,8 @@ module AngelList
           location_string: location,
           role: role,
           url: job['angellist_url'],
-          copmany: job['startup']['name']
+          copmany: job['startup']['name'],
+          provider_id: job['id']
         } )
       end
 
