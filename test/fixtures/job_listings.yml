@@ -1,19 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
+  title: "Cobol Ninja"
   provider_id: 1
-  description: MyString
-  extra: MyString
-  location_string: MyString
-  url: MyString
+  description: "some description"
+  extra: nil
+  location_string: "Ny, Ny"
+  url: "www.google.com"
+  key_in_provider: 123
   job_id: 1
 
 two:
-  title: MyString
+  title: "listing 2"
   provider_id: 1
-  description: MyString
-  extra: MyString
-  location_string: MyString
-  url: MyString
-  job_id: 1
+  description: "some description"
+  extra: nil
+  location_string: "SF, Ca"
+  key_in_provider: 456
+  url: "www.exampel.com"
+  job_id: 2

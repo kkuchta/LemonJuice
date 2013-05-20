@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  role: MyString
-  location: MyString
+  role: "developer"
+  location: "Someplace"
+  company: "Megasoft"
+  id: 1
 
 two:
-  role: MyString
-  location: MyString
+  role: "designer"
+  location: "here"
+  company: "37Noise"
+  id: 2

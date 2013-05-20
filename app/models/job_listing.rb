@@ -4,6 +4,7 @@ class JobListing < ActiveRecord::Base
 
   def self.ingest_job_listing( job_listing_data )
 
+      logger.debug "HERE!"
       logger.info( 'data=' + job_listing_data.inspect )
       # If we have a pre-existing job listing from this provider, skip it
       if( JobListing.exists?( {
@@ -13,6 +14,8 @@ class JobListing < ActiveRecord::Base
         return
         # skip
       end
+      #logger.info( "here 2" )
+
 
       # else, look for an existing job listing from another provider
       #   if found, add this listing to that listing's job object
@@ -20,9 +23,16 @@ class JobListing < ActiveRecord::Base
       same_job_different_provider = JobListing.joins(:job).where( {
         title: job_listing_data[:title],
         jobs: { company: job_listing_data[:company] }
-      } ).first();
+      } ).first;
 
       logger.info "sjdp = " + same_job_different_provider.inspect
+      
+      if same_job_different_provider
+        same_job_different_provider.job.job_listings << JobListing.create({
+          title: "Whatever"
+        })
+      end
+
       
 
       # else, create new job and job listing
