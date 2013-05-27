@@ -39,11 +39,32 @@ class JobListingTest < ActiveSupport::TestCase
       title: "Cobol Ninja",
       provider_id: 2,
       job_id: 1
-    }) )
+    }).first )
   end
 
   test "ingest new listing, new job" do
-    # TODO
-    assert( false )
+
+    assert_nil( JobListing.where({
+      title: "Perl Pirate"
+    }).first )
+    assert_nil( Job.where({
+      company: "Foo Co."
+    }).first )
+
+    JobListing.ingest_job_listing({
+      key_in_provider: 789,
+      provider_id: 1,
+      title: "Perl Pirate",
+      company: "Foo Co.",
+      role: "developer"
+    })
+
+    assert_not_nil( JobListing.where({
+      title: "Perl Pirate"
+    }).first )
+    assert_not_nil( Job.where({
+      company: "Foo Co."
+    }).first )
+
   end
 end
