@@ -10,15 +10,21 @@ class JobListingTest < ActiveSupport::TestCase
   end
 
   test "ingest new listing, old job" do
-    old_listing_count = JobListing.count
+
+    # We have a pre-existing similar listing, but for provider 1
     assert_not_nil( JobListing.where( {
       title: "Cobol Ninja",
+      provider_id: 1,
       job_id: 1
     } ).first )
+
+    # We have an existing job
     assert_not_nil( Job.where( {
       company: "Megasoft",
       id: 1
     } ).first )
+
+    # Do ingestion, and ensure we don't create a new job here
     assert_no_difference('Job.count') do
       JobListing.ingest_job_listing({
         key_in_provider: 789,
@@ -27,10 +33,17 @@ class JobListingTest < ActiveSupport::TestCase
         company: "Megasoft"
       })
     end
+
+    # ensure we *do* create a new job listing for provider 2
     assert_not_nil( JobListing.where({
       title: "Cobol Ninja",
       provider_id: 2,
       job_id: 1
     }) )
+  end
+
+  test "ingest new listing, new job" do
+    # TODO
+    assert( false )
   end
 end

@@ -36,7 +36,11 @@ end
 
 gem 'httparty'
 
-gem 'quiet_assets', :group => :development
+group :development do
+  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'quiet_assets'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
