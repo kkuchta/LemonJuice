@@ -5,7 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0.rc1'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
@@ -41,6 +41,7 @@ group :development do
   gem "binding_of_caller"
   gem 'better_errors'
   gem 'quiet_assets'
+  gem 'sqlite3'
 end
 
 # Use ActiveModel has_secure_password
