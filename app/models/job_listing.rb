@@ -6,7 +6,7 @@ class JobListing < ActiveRecord::Base
 
       # If we have a pre-existing job listing from this provider, skip it
       if( JobListing.exists?( {
-        key_in_provider: job_listing_data[:key_in_provider],
+        key_in_provider: job_listing_data[:key_in_provider].to_s,
         provider_id: job_listing_data[:provider_id]
       } ) )
         return
