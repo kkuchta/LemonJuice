@@ -19,8 +19,8 @@ module AngelList
     last_page = 2
     page = 1
     job_listing_data = []
-    until page >= last_page or page > 1
-      url = "#{JOBS_URL}?page=#{page}&per_page=3"
+    until page >= last_page or page > 10000
+      url = "#{JOBS_URL}?page=#{page}&per_page=300"
       #log.info url.inspect
       response = HTTParty.get(url)
       page_json = ActiveSupport::JSON.decode(response.body)
