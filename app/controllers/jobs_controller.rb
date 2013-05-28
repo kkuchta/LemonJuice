@@ -5,21 +5,21 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    Job.delete_all
-    job_data = AngelList.getJobs();
-    job_data.each do |data|
-      JobListing.ingest_job_listing( data )
-      # If we have a pre-existing job listing with this data
-      #   continue
-      #
-      # else, look for existing job match
-      #   if found, add job listing to that job
-      #   continue
-      #
-      # else, create new job and job listing
-    end
-    @job_data = job_data
-    logger.info job_data
+    #Job.delete_all
+    #job_data = AngelList.getJobs();
+    #job_data.each do |data|
+      #JobListing.ingest_job_listing( data )
+      ## If we have a pre-existing job listing with this data
+      ##   continue
+      ##
+      ## else, look for existing job match
+      ##   if found, add job listing to that job
+      ##   continue
+      ##
+      ## else, create new job and job listing
+    #end
+    #@job_data = job_data
+    #logger.info job_data
     @jobs = Job.all
   end
 

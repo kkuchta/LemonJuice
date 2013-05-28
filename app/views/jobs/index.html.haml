@@ -8,8 +8,8 @@
       %th
       %th
   %tbody
-    Dump:
-    = raw JSON.pretty_generate( @job_data ).gsub(" ","&nbsp;").gsub("\n", "<br />")
+    -#Dump:
+    -#= raw JSON.pretty_generate( @job_data ).gsub(" ","&nbsp;").gsub("\n", "<br />")
     - @jobs.each do |job|
       %tr
         %td= job.role
