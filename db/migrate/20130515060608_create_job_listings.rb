@@ -3,10 +3,10 @@ class CreateJobListings < ActiveRecord::Migration
     create_table :job_listings do |t|
       t.string :title
       t.integer :provider_id
-      t.string :description
-      t.string :extra
+      t.text :description
+      t.text :extra
       t.string :location_string
-      t.string :url
+      t.text :url
       t.integer :job_id
 
       t.timestamps

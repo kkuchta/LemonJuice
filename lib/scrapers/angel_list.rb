@@ -58,7 +58,7 @@ module AngelList
         
         # we need to check for duplicates later, so just return json for now
         job_listing_data.append( {
-          title: job['title'],
+          title: job['title'][0,255],
           description: skills.join(' - '),
           location_string: location,
           role: role,

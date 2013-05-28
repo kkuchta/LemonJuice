@@ -2,6 +2,9 @@ class JobListing < ActiveRecord::Base
 
   belongs_to :job
 
+  validates :title, :length => { :maximum => 255 }
+  validates :description, :length => { :maximum => 20000 }
+
   def self.ingest_job_listing( job_listing_data )
 
       # If we have a pre-existing job listing from this provider, skip it
